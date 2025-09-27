@@ -572,3 +572,13 @@ class Client:
         return self._session.get(f'{self._base_api_url}/marketdata/v1/instruments/{cusip_id}',
                             headers={'Authorization': f'Bearer {self.tokens.access_token}'},
                             timeout=self.timeout)
+                            
+    def update_token_from_code(self, code_url):
+        """
+        	Update token from code
+        """
+        self.tokens._update_refresh_token_from_code(code_url)
+        
+        
+        
+        
